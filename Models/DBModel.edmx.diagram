@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a5d88af615648bcb65a494746fa2ca0" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="activitiesAssociationModel.Applications" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.Classifier" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.DataBank" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.Organizations" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.DataBankView" Width="1.5" PointX="2.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="activitiesAssociationModel.RequestsFullInfoView" Width="1.5" PointX="4.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="activitiesAssociationModel.FK__Applicati__id_ba__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="activitiesAssociationModel.FK__Applicati__id_di__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="activitiesAssociationModel.FK__DataBank__id_ban__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="activitiesAssociationModel.FK__DataBank__id_ban__30F848ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,160 @@
+﻿<Page x:Class="InfoNaukaApplication.Views.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InfoNaukaApplication.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Menu">
+
+    <Page.Resources>
+
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD" />
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Focusable="False"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="Transparent" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="Transparent" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="320">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" >
+                <Hyperlink NavigateUri="WatchRequest.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/WatchRequest.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="190" TextAlignment="Center">Переглянути запити</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+
+            <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="WatchScience.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/WatchScience.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="200" TextAlignment="Center">Переглянути наукові направлення</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="WatchOrganization.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/WatchOrganization.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="160" TextAlignment="Center">Переглянути організації</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="WatchDataBank.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/WatchDataBank.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="160" TextAlignment="Center">Переглянути банки даних</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="CreateRequest.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/CreateRequest.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="160" TextAlignment="Center">Створити запит</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="CreateScience.xaml" TextDecorations="none" >
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/CreateScience.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="160" TextAlignment="Center">Додати наукове направлення</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="CreateOrganization.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/CreateOrganization.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="120" TextAlignment="Center">Додати організацію</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="CreateDataBank.xaml" TextDecorations="none">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Images/CreateDataBank.png" Height="100"/>
+                        <TextBlock Foreground="BlueViolet" FontSize="20" TextWrapping="Wrap" Width="120" TextAlignment="Center">Додати банк даних</TextBlock>
+                    </StackPanel>
+                </Hyperlink>
+            </TextBlock>
+
+        </Grid>
+    </Grid>
+</Page>
